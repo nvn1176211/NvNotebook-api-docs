@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebook api docs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="index.css?version=2">
+</head>
+
+<body class="container mt-3">
+    <div class="d-flex justify-content-between mb-5">
+        <h1 class="m-0"><a href="/" class="text-decoration-none">NVN</a></h1>
+        <div class="d-flex">
+            <div class="me-3 d-flex align-items-center">
+                <i class="bi bi-circle-half p-2 me-2 cursor-pointer" id="dark-mode-switch"></i>
+                <select name="lang" id="lang-select" class="form-select">
+                    <option value="en" selected>EN</option>
+                    <option value="vi">VI</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h5 class="mb-5">Welcome to Notebook api documentation!</h5>
+        <!-- <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">GET</span>
+                        <span>Get a specific article</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between mb-3">
+                        <span class="text-wrap text-break">https://nvnwh.000webhostapp.com/api/articles/{id}</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Path parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th style="width: 110px;">Name</th>
+                                    <th>Required</th>
+                                    <th style="width: 80px;">Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">id</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">Number</td>
+                                    <td class="text-wrap text-break">Article id</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Query parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th style="width: 110px;">Name</th>
+                                    <th>Required</th>
+                                    <th style="width: 80px;">Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">api_token</td>
+                                    <td class="text-wrap text-break">No</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">It's the token that you get after login or register successfully. It is used to check which pages the current user has voted.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example response</p>
+                    <p>Status: 200</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "voted": "yes",
+    "id": 1,
+    "is_your_own": "yes",
+    "name": "World War II",
+    "content": "World War II or the Second World War was a global conflict that lasted from 1939 to 1945. The vast majority of the world's countries, including all the great powers, fought as part of two opposing military alliances: the Allies and the Axis.",
+    "votes": 1,
+    "author_name": "admin",
+    "f1_created_at": "2024/03/06 09:39"
+}  
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">POST</span>
+                        <span>Create a new user</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between mb-3">
+                        <span class="text-wrap text-break">http://127.0.0.1:8000/api/users</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Query parameters</caption>
+                            <thead>
+                                <tr>
+                                    <th style="width: 110px;">Name</th>
+                                    <th>Required</th>
+                                    <th style="width: 80px;">Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">name</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">User's name</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">email</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">User's email</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">password</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">String</td>
+                                    <td class="text-wrap text-break">User's password</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example response</p>
+                    <p>Status: 200</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "name": "user2",
+    "email": "user2@gmail.com",
+    "updated_at": "2024-10-08T15:00:34.000000Z",
+    "created_at": "2024-10-08T15:00:34.000000Z",
+    "id": 5
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">GET</span>
+                        <span>Get (your)user data</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between mb-3">
+                        <span class="text-wrap text-break">http://127.0.0.1:8000/api/user</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example response</p>
+                    <p>Status: 200</p>
+                    <div class="bg-light p-2">
+                        <pre class="m-0">
+{
+    "name": "user3",
+    "email": "user3@gmail.com",
+    "updated_at": "2024-10-08T15:31:47.000000Z",
+    "created_at": "2024-10-08T15:31:47.000000Z",
+    "id": 6,
+    "token": "8|TDgFyFqNpkcPvGqOl38HF7u8pP2hftMdMf6tS5UIcd675c4c"
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+    $(function(){
+        $('.link-area').on({
+            'mouseenter': function(){
+                $(this).find('i').removeClass('d-none');
+            },
+            'mouseleave': function(){
+                $(this).find('i').addClass('d-none');
+            }
+        })
+        $('.link-area i.bi-copy').on({
+            'click': function(){
+                let text = $(this).prev().text();
+                navigator.clipboard.writeText(text);
+            }
+        })
+        $('#dark-mode-switch').on('click', function(){
+            let html = $('html');
+            html.attr('data-bs-theme', html.attr('data-bs-theme') == 'dark' ? '' : 'dark');
+        });
+    });
+</script>
+</html>
