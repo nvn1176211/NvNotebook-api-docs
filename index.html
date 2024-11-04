@@ -38,10 +38,31 @@
                     </div>
                     <div>
                         <table class="table table-bordered caption-top">
+                            <caption>Headers</caption>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Required</th>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">Accept</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">application/json</td>
+                                    <td class="text-wrap text-break"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
                             <caption>Path parameters</caption>
                             <thead>
                                 <tr>
-                                    <th style="width: 110px;">Name</th>
+                                    <th>Name</th>
                                     <th>Required</th>
                                     <th style="width: 80px;">Value</th>
                                     <th>Description</th>
@@ -62,7 +83,7 @@
                             <caption>Query parameters</caption>
                             <thead>
                                 <tr>
-                                    <th style="width: 110px;">Name</th>
+                                    <th>Name</th>
                                     <th>Required</th>
                                     <th style="width: 80px;">Value</th>
                                     <th>Description</th>
@@ -80,21 +101,36 @@
                     </div>
                 </div>
                 <div class="col col-md-6">
-                    <p class="mb-0">Example response</p>
-                    <p>Status: 200</p>
-                    <div class="bg-light p-2">
-                        <pre class="m-0">
+                    <p class="mb-0">Example responses</p>
+                    <div class="mt-3">
+                        <p>Status: 200</p>
+                        <div class="bg-light p-2">
+                            <pre class="m-0">
 {
-    "voted": "yes",
-    "id": 1,
-    "is_your_own": "yes",
-    "name": "World War II",
-    "content": "World War II or the Second World War was a global conflict that lasted from 1939 to 1945. The vast majority of the world's countries, including all the great powers, fought as part of two opposing military alliances: the Allies and the Axis.",
-    "votes": 1,
-    "author_name": "admin",
-    "f1_created_at": "2024/03/06 09:39"
-}  
-                        </pre>
+    "name": "user2",
+    "email": "user2@gmail.com",
+    "updated_at": "2024-10-08T15:00:34.000000Z",
+    "created_at": "2024-10-08T15:00:34.000000Z",
+    "id": 5,
+    "token": "8|TDgFyFqNpkcPvGqOl38HF7u8pP2hftMdMf6tS5UIcd675c4c"
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <p>Status: 422</p>
+                        <div class="bg-light p-2">
+                            <pre class="m-0">
+{
+    "message": "The name field is required. (and 2 more errors)",
+    "errors": {
+        "name": [
+            "The name field is required."
+        ]
+    }
+}
+                            </pre>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -112,12 +148,33 @@
                     </div>
                     <div>
                         <table class="table table-bordered caption-top">
+                            <caption>Headers</caption>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Required</th>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">Accept</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">application/json</td>
+                                    <td class="text-wrap text-break"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
                             <caption>Query parameters</caption>
                             <thead>
                                 <tr>
-                                    <th style="width: 110px;">Name</th>
+                                    <th>Name</th>
                                     <th>Required</th>
-                                    <th style="width: 80px;">Value</th>
+                                    <th>Value</th>
                                     <th>Description</th>
                                 </tr>
                             </thead>
@@ -145,10 +202,11 @@
                     </div>
                 </div>
                 <div class="col col-md-6">
-                    <p class="mb-0">Example response</p>
-                    <p>Status: 200</p>
-                    <div class="bg-light p-2">
-                        <pre class="m-0">
+                    <p class="mb-0">Example responses</p>
+                    <div class="mt-3">
+                        <p>Status: 201</p>
+                        <div class="bg-light p-2">
+                            <pre class="m-0">
 {
     "name": "user2",
     "email": "user2@gmail.com",
@@ -157,7 +215,23 @@
     "id": 5,
     "token": "8|TDgFyFqNpkcPvGqOl38HF7u8pP2hftMdMf6tS5UIcd675c4c"
 }
-                        </pre>
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <p>Status: 422</p>
+                        <div class="bg-light p-2">
+                            <pre class="m-0">
+{
+    "message": "The name field is required. (and 2 more errors)",
+    "errors": {
+        "name": [
+            "The name field is required."
+        ]
+    }
+}
+                            </pre>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -173,21 +247,145 @@
                         <span class="text-wrap text-break">http://127.0.0.1:8000/api/user</span>
                         <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
                     </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Headers</caption>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Required</th>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">Accept</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">application/json</td>
+                                    <td class="text-wrap text-break"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">Authorization</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">Bearer &lt;YOUR-TOKEN&gt;</td>
+                                    <td class="text-wrap text-break"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="col col-md-6">
-                    <p class="mb-0">Example response</p>
-                    <p>Status: 200</p>
-                    <div class="bg-light p-2">
-                        <pre class="m-0">
+                    <p class="mb-0">Example responses</p>
+                    <div class="mt-3">
+                        <p>Status: 200</p>
+                        <div class="bg-light p-2">
+                            <pre class="m-0">
 {
-    "name": "user3",
-    "email": "user3@gmail.com",
-    "updated_at": "2024-10-08T15:31:47.000000Z",
-    "created_at": "2024-10-08T15:31:47.000000Z",
-    "id": 6,
-    "token": "8|TDgFyFqNpkcPvGqOl38HF7u8pP2hftMdMf6tS5UIcd675c4c"
+    "id": 1,
+    "name": "admin1",
+    "email": "nvnit1176211@gmail.com",
+    "email_verified_at": null,
+    "created_at": "2024-10-28T09:56:46.000000Z",
+    "updated_at": "2024-10-28T09:56:46.000000Z"
 }
-                        </pre>
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <p>Status: 401</p>
+                        <div class="bg-light p-2">
+                            <pre class="m-0">
+{
+    "message": "Unauthenticated."
+}
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-top border-secondary pt-2 mb-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <p>
+                        <span class="text-success me-2 fw-bold">POST</span>
+                        <span>Store new tag</span>
+                    </p>
+                    <div class="link-area bg-light p-2 d-flex justify-content-between mb-3">
+                        <span class="text-wrap text-break">http://127.0.0.1:8000/api/tags</span>
+                        <i class="bi bi-copy d-none cursor-pointer" title="copy"></i>
+                    </div>
+                    <div>
+                        <table class="table table-bordered caption-top">
+                            <caption>Headers</caption>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Required</th>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-wrap text-break">Accept</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">application/json</td>
+                                    <td class="text-wrap text-break"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-wrap text-break">Authorization</td>
+                                    <td class="text-wrap text-break">Yes</td>
+                                    <td class="text-wrap text-break">Bearer &lt;YOUR-TOKEN&gt;</td>
+                                    <td class="text-wrap text-break"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <p class="mb-0">Example responses</p>
+                    <div class="mt-3">
+                        <p>Status: 201</p>
+                        <div class="bg-light p-2">
+                            <pre class="m-0">
+{
+    "id": 5,
+    "name": "PHP",
+    "description": "PHP is a general-purpose scripting language geared towards web development.",
+    "created_at": "2024-11-04T08:42:40.000000Z",
+    "created_by": 1,
+    "updated_at": "2024-11-04T08:42:40.000000Z",
+    "updated_by": 1
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <p>Status: 401</p>
+                        <div class="bg-light p-2">
+                            <pre class="m-0">
+{
+    "message": "Unauthenticated."
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <p>Status: 422</p>
+                        <div class="bg-light p-2">
+                            <pre class="m-0">
+{
+    "message": "The name field is required.",
+    "errors": {
+        "name": [
+            "The name field is required."
+        ]
+    }
+}
+                            </pre>
+                        </div>
                     </div>
                 </div>
             </div>
